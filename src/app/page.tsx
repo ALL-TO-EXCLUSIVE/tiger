@@ -1,11 +1,13 @@
+import Card from "@/components/card";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center">
+    <main className="flex min-h-screen flex-col items-center bg-[#F6AE2D] relative">
       <div
         id="page1"
-        className="w-full h-screen cursor-default select-none overflow-hidden bg-[#F6AE2D] flex flex-col  gap-20 lg:gap-10 md:gap-20  sm:gap-16   items-center justify-center"
+        className="w-full h-[85vh] lg:h-screen cursor-default select-none overflow-hidden bg-[#F6AE2D] flex flex-col  gap-20 lg:gap-10 md:gap-20  sm:gap-16   items-center justify-center"
       >
         <div className="font-mono w-full flex items-center justify-evenly text-2xl">
           <Link href={"shop"}>Shop</Link>
@@ -36,6 +38,42 @@ export default function Home() {
             <span>THE</span>
             <span>TOP</span>
           </p>
+        </div>
+      </div>
+      <div
+        className="w-full h-max pb-10 lg:min-h-[80vh] flex flex-col relative items-center justify-center"
+        id="page2"
+      >
+        <div
+          id="text"
+          className=" text-black w-[70%] flex flex-col gap-10 justify-center "
+        >
+          <h1 className=" text-3xl sm:text-4xl lg:text-5xl font-[tigonFont]">
+            Welcome to cycling nirvana
+          </h1>
+          <div className="flex flex-col text-xl sm:text-2xl lg:flex-row gap-10 font-mono">
+            <p>
+              We’re a passionate startup dedicated to helping you achieve your
+              fitness and adventure goals by providing state-of-the-art cycles
+              for every level of cyclist. Think less, pedal more.
+            </p>
+            <p>
+              Our mission is to revolutionize the world of cycling and inspire
+              people to embrace a healthier, more adventurous lifestyle. Are you
+              ready to ride?
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="page3" className="lg:min-h-screen flex flex-col gap-16 ">
+        <div id="text" className="w-full flex flex-col gap-5 items-center justify-center text-center">
+            <h1 className="font-[tigonFont] text-3xl lg:text-5xl">OUR SQUAD</h1>
+            <p className="font-mono text-xl lg:text-2xl px-6">Meet our talented team of professionals <br /> ready to gear you up for success!</p>
+        </div>
+        <div className="flex flex-col gap-5 lg:flex-row" id="cards">
+          <Card/>
+          <Card/>
+          <Card/>
         </div>
       </div>
     </main>
