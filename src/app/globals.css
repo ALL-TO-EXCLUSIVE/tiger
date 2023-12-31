@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
+/* @font-face {
   font-family: tigonFont;
   src: url("../../../fonts/bold.woff2");
-}
+} */
 
 @layer base {
   :root {
