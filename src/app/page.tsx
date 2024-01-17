@@ -1,8 +1,40 @@
+"use client"
 import Card from "@/components/card";
+import Feature from "@/components/feature";
 import Image from "next/image";
 import Link from "next/link";
+import {useGSAP} from "@gsap/react"
+import gsap from "gsap";
+
+
+
 
 export default function Home() {
+
+
+useGSAP(()=>{
+  gsap.from("#page1 #logo",
+  {
+      opacity:0,
+      y:100
+  }
+  )
+
+  gsap.from("#tagline",{
+    y:500,
+    opacity:0,
+  })
+  gsap.from("#page2 #text",{
+    y:500,
+    opacity:0,
+    scrollTrigger:{
+      trigger:"#page2",
+      markers:true,
+      scrub:1
+    }
+  })
+});
+
   return (
     <main className="flex min-h-screen flex-col items-center bg-[#F6AE2D] relative">
       <div
@@ -26,8 +58,8 @@ export default function Home() {
           </div>
           <Link href={"shop"}>About</Link>
         </div>
-        <div className="text-center">
-          <h1 className="text-[200px] lg:text-[400px] md:text-[300px] sm:text[200px] leading-none font-[tigonFont] text-transparent bg-clip-text bg-gradient-to-r from-black to-[#305E81]">
+        <div className="text-center" >
+          <h1 id="logo" className="text-[200px] lg:text-[400px] md:text-[300px] sm:text[200px] leading-none font-[tigonFont] text-transparent bg-clip-text bg-gradient-to-r from-black to-[#305E81]">
             TIGON
           </h1>
           <p
@@ -75,6 +107,13 @@ export default function Home() {
           <Card/>
           <Card/>
         </div>
+      </div>
+      <div id="page4" className="w-full py-[80px] min-h-screen flex flex-col gap-20 items-center justify-center">
+        <Feature/>
+        <Feature/>
+      </div>
+      <div id="page5" className="w-full min-h-screen">
+        
       </div>
     </main>
   );
